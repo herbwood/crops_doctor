@@ -32,7 +32,7 @@ kaggle datasets download -d herbwood27/crop-disease-dataset
 ### Step 1. 원격 저장소 git clone
 
 ```
-git clone https://github.com/soyoonseo/2_3tflite
+git clone https://github.com/herbwood/crops_doctor.git
 ```
 
 <p align="center"><img src="https://ifh.cc/g/0UnbcI.jpg" width="500px"></p>
