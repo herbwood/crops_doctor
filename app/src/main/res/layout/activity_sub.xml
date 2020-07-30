@@ -27,6 +27,10 @@
                 android:background="#E0FFE0"
                 android:layout_marginBottom="8dp"
                 android:id="@+id/textViewName"/>
+            <TextView
+                android:id="@+id/textView01"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
