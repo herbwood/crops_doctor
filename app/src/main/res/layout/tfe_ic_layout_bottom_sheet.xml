@@ -12,6 +12,12 @@
     app:behavior_hideable="true"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
+    <Button
+        android:id="@+id/btn_move"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="방제 방법 알아보기"/>
+
     <LinearLayout
         android:id="@+id/gesture_layout"
         android:layout_width="match_parent"

@@ -19,6 +19,7 @@ package org.tensorflow.lite.examples.classification;
 import android.Manifest;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.hardware.camera2.CameraAccessException;
@@ -43,6 +44,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -100,6 +102,9 @@ public abstract class CameraActivity extends AppCompatActivity
   private Device device = Device.CPU;
   private int numThreads = -1;
 
+  private Button btn_move; //이동 버튼 변수 선언
+  private TextView detected_item; // 작물_병해 변수
+
   @Override
   protected void onCreate(final Bundle savedInstanceState) {
     LOGGER.d("onCreate " + this);
@@ -113,6 +118,18 @@ public abstract class CameraActivity extends AppCompatActivity
     } else {
       requestPermission();
     }
+
+    btn_move = findViewById(R.id.btn_move);
+    detected_item = findViewById(R.id.detected_item);
+
+    btn_move.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        Intent intent = new Intent(CameraActivity.this, subActivity.class);
+        intent.putExtra("pestname", detected_item.getText());
+        startActivity(intent);
+      }
+    });
 
     threadsTextView = findViewById(R.id.threads);
     plusImageView = findViewById(R.id.plus);
