@@ -23,7 +23,9 @@ kaggle datasets download -d herbwood27/crop-disease-dataset
 ```
 
 - data augmentation 및 데이터 전처리 진행
-- **EfficientNet** 모델을 통해 분류 모델 학습
+- **EfficientNet lite0** 모델을 통해 분류 모델 학습
+- epoch=40, dropout_rate=0.2, use_augmentation=False
+- accuracy = 91.69%, loss = 1.0403
 - Tensorflow Lite를 통해 산출된 `model.tflite`, `labels.txt` 를 `app/src/main/assets` 디렉터리에 포함시켜  학습된 모델과 label을 load시킴
 
 
